@@ -1,3 +1,3 @@
 # CryptoCurrency Extractor
 
-Extracts updates of CryptoCurrency
+Extracts updates on top CryptoCurrencies
