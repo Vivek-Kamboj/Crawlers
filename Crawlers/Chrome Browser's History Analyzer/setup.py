@@ -15,7 +15,7 @@ import operator
 from collections import OrderedDict
 import matplotlib.pyplot as plt
 ###############################################################################
-################################ANALYZING######################################
+################################FUNCTIONS######################################
 ###############################################################################
 
 def analyze(results): 
@@ -40,8 +40,9 @@ def parse(url):
  		return domain
  	except IndexError:
  		print("URL format error!")
-
-#path to user's history database (Chrome)
+###############################################################################
+####################PATH TO USER'S HISTORY DATABASE############################
+###############################################################################
 if 'Linux' in os.uname():
 #	'Linux Distro!!'
 	try:
@@ -64,8 +65,9 @@ else:
 		history_db = input()
 		pass
 
- 
-#querying the db
+###############################################################################
+#######################QUERYING THE DATABASE###################################
+###############################################################################
 c = sqlite3.connect(history_db)
 cursor = c.cursor()
 select_statement = "SELECT urls.url, urls.visit_count FROM urls, visits WHERE urls.id = visits.url;"
@@ -74,7 +76,9 @@ cursor.execute(select_statement)
 results = cursor.fetchall()
 
 sites_count = {}
-
+###############################################################################
+###################################LASTLY######################################
+###############################################################################
 for url, count in results:
 	url = parse(url)
 	if url in sites_count:
