@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Mon Nov 20 22:33:25 2017
-
 @author: LordKratos
 """
 
